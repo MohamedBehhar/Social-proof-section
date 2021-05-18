@@ -1,0 +1,341 @@
+/* General rules */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    font-size: 15px;
+    font-family: 'Spartan', sans-serif;
+
+}
+
+/* root */
+:root{
+    /* Primary */
+    --Very-Dark-Magenta: hsl(300, 43%, 22%);
+    --Soft-Pink: hsl(333, 80%, 67%);
+    
+    /* Neutral */
+    --Dark-Grayish-Magenta: hsl(303, 10%, 53%);
+    --Light-Grayish-Magenta: hsl(300, 24%, 96%);
+    --White: hsl(0, 0%, 100%);    
+}
+
+/* styling the body */
+body{
+    background-color: rgb(255, 255, 255);
+    position: relative;
+}
+
+body .content{
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* positioning the SVG background for desktop */
+@media screen and (max-width: 1440px){
+    .content .desktop-bg-top{
+        position: absolute;
+        top: -12%;
+        left: 0;
+    }
+    
+    .content .desktop-bg-bottom{
+        position: absolute;
+        bottom: -20%;
+        right: 0;
+    }
+    .content .mobile-bg-top{
+        display: none;
+    }
+    
+    .content .mobile-bg-bottom{
+        display: none;
+    }
+}
+
+/* positioning the SVG background for mobile */
+@media screen and (max-width: 375px){
+    .content .desktop-bg-top{
+    display: none;
+    }
+    
+    .content .desktop-bg-bottom{
+        display: none;
+    }
+
+    .content .mobile-bg-top{
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .content .mobile-bg-bottom{
+        display: block;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+}
+
+/* styling the container and make it repnsive for different screen */
+body .container {
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem; 
+}
+@media screen and (max-width: 1440px){
+    body .container{
+        max-width: 1080px;
+    }
+}
+@media screen and (max-width: 1100px){
+    body .container{
+        max-width: 860px;
+    }
+}
+@media screen and (max-width: 860px){
+    body .container{
+        max-width: 100%;
+    }
+}
+
+/* styling the first part */
+.first-part{
+    padding-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 3rem;
+}
+
+.first-part .text{
+    max-width: 46%;
+    
+}
+
+.first-part .text h1{
+    color: var(--Very-Dark-Magenta);
+    font-size: 3rem;
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+.first-part .text p{
+    color: var(--Dark-Grayish-Magenta);
+    font-weight: 500;
+   
+}
+/* styling the rating boxs */
+.first-part .rating{
+    width: 54%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+.first-part .rating-box{
+    display: flex;
+    background: var(--Light-Grayish-Magenta);
+    min-width: 75%;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.first-part .box2{
+    margin-right: 7.5%;
+}
+
+.first-part .box1{
+    margin-right: 15%;
+}
+.rating-box .stars{
+    padding-right: 1.5rem;
+}
+.rating-box h5{
+    color: var(--Very-Dark-Magenta);
+    font-size: .9rem;
+}
+/* end of first-part */
+
+/* styling the second part */
+.second-part{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-bottom: 2rem;
+}
+
+.second-part .comment{
+    background: var(--Very-Dark-Magenta);
+    padding: 2.2rem ;
+    border-radius: 8px;
+    width: 32%;
+}
+
+/* adding margin-top to the comment */
+.second-part .cmnt2{
+    margin-top: 1.5%;
+}
+
+.second-part .cmnt3{
+    margin-top: 3%;
+}
+
+/* styling the image, the name and function */
+.comment p{
+    color:var(--Light-Grayish-Magenta);
+    font-size: .8rem;
+    line-height: 1.5;
+    padding-top: 1.5rem;
+    
+}
+
+.comment .info{
+    display: flex;
+    align-items: center;
+}
+
+.info h4{
+    color: white;
+    font-size: .9rem;
+    font-weight: 500;
+}
+
+.info h5{
+    color:var(--Soft-Pink);
+    font-size: .9rem;
+    font-weight: 200;
+}
+
+.comment .info .image{
+    width: 50px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    margin-right: 1rem;
+} 
+
+.cmnt1 .info .image{
+    background-image: url(./images/image-colton.jpg);
+}
+
+.cmnt2 .info .image{
+    background-image: url(./images/image-irene.jpg);
+}
+.cmnt3 .info .image{
+    background-image: url(./images/image-anne.jpg);
+}
+
+/* styling the attribution */
+.attribution {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    font-size: 9px;
+    
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+      
+/* making it responsive for tablettes */
+@media screen and (max-width: 830px)  {
+    .first-part{
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .first-part .text{
+        min-width: 80%;
+        text-align: center;
+        margin-bottom: 1rem;
+        
+    }
+
+    .first-part .rating{
+        align-items: center;
+        justify-content: center;
+        width: 70%;
+    }
+
+    .rating .box2,
+    .rating .box1{
+        margin-bottom: 1rem;
+        margin-right: 0;
+    }
+     
+    .box1{
+        align-self: flex-start;
+    }
+    .box3{
+        align-self: flex-end;
+    }
+
+    .second-part {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .second-part .comment{
+        margin-top: 0;
+        width: 70%;
+        margin-bottom: 1rem;
+    }
+}
+
+
+/* making it responsive for phones */
+@media screen and (max-width:675px) {
+    .first-part{
+        width: 100%;
+    }
+    .first-part .text{
+        min-width: 100%;
+    }
+
+    .first-part .rating{
+        min-width: 100%;
+    }
+    .box1, .box3{
+        align-self: center;
+    }
+
+    .rating-box{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .second-part .comment{
+        min-width: 100%;
+    }
+
+    
+
+}
+
+@media screen and (max-width: 550px) {
+    .first-part .rating-box{
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .first-part .stars{
+        margin-bottom: .5rem;
+    }
+
+    .first-part .text h1{
+        font-size: 2.5rem;
+    }
+    
+   
+
+    .attribution a{
+        font-size: .6rem;
+    }
+}
